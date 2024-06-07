@@ -1,0 +1,18 @@
+pipeline      
+agent any
+ 
+stages {stage('Clone Repository') {
+ 	 	steps {
+ 	 	 	git url: 'https://github.com/Selva79/DevOps.git', branch: 'main'
+ 	 	}
+ 	}
+stage('Build') {
+ 	steps {
+ 	 	sh 'javac DevOpsExample.java'
+ 	}
+}
+stage('Run') {
+ 	steps {
+ 	 	sh 'java DevOpsExample'
+ 	}
+}	
